@@ -1,4 +1,9 @@
 #sanity {
-   background-color: red;
-   color: white;
+   color: red;
+}
+
+#css-sanity {
+   background-color: lightgrey;
+   border: 5px grey solid;
+   border-radius: 5px;
 }
