@@ -11,3 +11,13 @@
 #sanity-treeind {
    color: blue;
 }
+
+#tree-create-sanity {
+   color: green;
+}
+
+
+#create-tree-wrap {
+   border: 5px green solid;
+   border-radius: 5px;
+}

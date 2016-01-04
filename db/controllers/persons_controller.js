@@ -8,3 +8,11 @@ module.exports.index = function(req, res) {
       res.json(persons);
    });
 };
+
+
+/*
+Create
+Read (show)
+Update (edit)
+Destroy (delete)
+*/
