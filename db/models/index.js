@@ -4,10 +4,7 @@ mongoose.connect("mongodb://localhost/lineage_app", function(){
    console.log("-- DB Connected --");
 });
 
-module.exports = {};
-
-
-// module.exports = {
-//    User: require("./user"),
-//    Post: require("./post")
-// };
+module.exports = {
+   Tree: require("./tree"),
+   Person: require("./person")
+};
