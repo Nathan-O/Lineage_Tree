@@ -4,6 +4,15 @@
    </div>
 
    <h3>Under Construction</h3>
+
+   <div id="tree-form-wrap">
+      <form ng-submit="FUNCTION!!!!!">
+         <div class="form-group">
+            <input type="text" class="form-control input-lg" ng-model="tree.familyName" placeholder="Family Name" required>
+         </div>
+      </form>
+   </div>
+
 </div>
 
 
@@ -24,4 +33,17 @@ then:
 
 A save button.
 
+
+<div class="row" id="creat-post-wrap">
+      <form ng-submit="createPost()">
+         <div class="form-group">
+            <input type="text" class="form-control input-lg" ng-model="post.title" placeholder="title" required>
+            <textarea class="form-control" ng-model="post.content" placeholder="Type here..." required>
+            </textarea>
+            <div>
+               <button type="submit" class="btn btn-info btn-lg">Create Post</button>
+            </div>
+         </div>
+      </form>
+   </div>
 -->

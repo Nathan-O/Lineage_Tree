@@ -9,7 +9,7 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
       })
       .when("/lineage-create", {
          templateUrl: "/partials/create-tree.html",
-         // controller: "..."
+         // controller: "lineageCtrl"
       })
       .otherwise({redirectTo: '/'});
 
