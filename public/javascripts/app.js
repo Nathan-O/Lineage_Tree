@@ -12,6 +12,10 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
          templateUrl: "/partials/create-tree.html",
          controller: "lineageCtrl"
       })
+      .when("/lineage-show", {
+         templateUrl: "/partials/lineage-show.html",
+         controller: ""
+      })
       .otherwise({redirectTo: '/'});
 
    $locationProvider.html5Mode({

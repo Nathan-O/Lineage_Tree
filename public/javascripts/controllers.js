@@ -21,10 +21,13 @@ app.controller("lineageIndexCtrl", function($scope, Tree, $location) {
    };
 });
 
+
+
 app.controller("lineageCtrl", function($scope, Tree) {
    $scope.tree = {};
    $scope.newTree = {};
    $scope.showFamilyNameForm = true;
+   $scope.showPersonForm = false;
 
    $scope.createTree = function() {
       console.log("Saving...");
@@ -35,7 +38,7 @@ app.controller("lineageCtrl", function($scope, Tree) {
             console.log($scope.newTree);
 
             $scope.showFamilyNameForm = false;
-
+            $scope.showPersonForm = true;
 
          },
          function(data) {
@@ -45,5 +48,35 @@ app.controller("lineageCtrl", function($scope, Tree) {
          }
       );
       $scope.tree = {};
+   };
+
+   $scope.show = function($scope, Tree, $location) {
+      Tree.get($scope.tree, function(data) {
+         console.log("FULL CIRCLE");
+      });
+   };
+});
+
+app.controller("personCtrl", function($scope, Person) {
+   $scope.person = {};
+   $scope.newPerson = {};
+   // $scope.showFamilyNameForm = true;
+   // $scope.showPersonForm = false;
+
+   $scope.createPerson = function() {
+      console.log("Saving...");
+      Person.save($scope.person,
+         function(data) {
+            console.log("Person Saved");
+            $scope.newPerson = data;
+            console.log($scope.newPerson);
+         },
+         function(data) {
+            console.log("Didn't Save");
+            console.log(data);
+            alert("Opps, there was a problem saving the person");
+         }
+      );
+      $scope.person = {};
    };
 });

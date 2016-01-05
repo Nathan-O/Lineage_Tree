@@ -11,6 +11,22 @@ module.exports.index = function(req, res) {
    });
 };
 
+module.exports.create = function(req, res) {
+   var personData = req.body;
+   var newPerson = new Person({}); // <-- ADD INFO
+
+   newPerson.save(function(err, person) {
+      if (err) {
+         console.log(err);
+         res.status(422).send(err);
+      } else {
+         res.json(person);
+      }
+   });
+};
+
+
+
 
 /*
 Create

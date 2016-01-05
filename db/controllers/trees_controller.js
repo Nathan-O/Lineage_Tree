@@ -10,9 +10,17 @@ module.exports.index = function (req, res) {
    });
 };
 
-// module.exports.show = function(req, res) {
-//    //
-// };
+// // set the value of the id
+// var targetId = req.params.id;
+//
+// // find question in db by id
+// Question.findOne({_id: targetId}, function (err, foundQuestion) {
+//   res.json(foundQuestion);
+// });
+
+module.exports.show = function(req, res) {
+   console.log(req.body);
+};
 
 module.exports.create = function(req, res) {
    var treeData = req.body;
