@@ -35,9 +35,18 @@ module.exports.create = function(req, res) {
 //    //
 // };
 
-// module.exports.destroy = function(req, res) {
-//    //
-// };
+module.exports.destroy = function(req, res) {
+   var targetId = req.params.id;
+
+   Tree.findOneAndRemove({_id: targetId}, function(err, delTree) {
+      if (err) {
+         console.log(" --  !! Delete Error !!  -- ");
+         console.log(err);
+         res.status(422).send(err);
+      }
+      res.json(delTree);
+   });
+};
 
 /*
 Create

@@ -9,11 +9,18 @@
    <div class="row">
       <div id="tree-list-wrap">
          <ul class="list-group" ng-repeat="line in trees">
-            <li>{{line.familyName}}</li>
+            <li class="list-group-item">
+               {{line.familyName}}
+               <a href="#" class="pull-right" ng-click="deleteLineage(line)">
+                  <i class="icon ion-close-circled"></i>
+               </a>
+            </li>
          </ul>
          <p>Goes Here...</p>
       </div>
    </div>
+
+   
 
 
 

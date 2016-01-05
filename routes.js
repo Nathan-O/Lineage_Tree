@@ -11,6 +11,7 @@ var usersCtrl = require("./controllers/users_controller");
 // Lineage (Tree) routes
 api.get("/api/lineages", treesCtrl.index);
 api.post("/api/lineages", treesCtrl.create);
+api.delete("/api/lineages/:id", treesCtrl.destroy);
 
 
 module.exports = api;
