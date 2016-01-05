@@ -9,7 +9,7 @@ var TreeSchema = new Schema({
    dateCreated: {type: Date, default: Date.now()}
 });
 
-TreeSchema.plugin(passportLocalMongoose);
+// TreeSchema.plugin(passportLocalMongoose);
 
 var Tree = mongoose.model("Tree", TreeSchema);
 

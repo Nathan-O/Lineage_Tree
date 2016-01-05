@@ -1,6 +1,8 @@
-var express = require("express");
+// var express = require("express");
+var mongoose = require("mongoose");
 var passport = require("passport");
 var Person = require("./../models").Person;
+                     // "./../db/models"
 
 // Index all of the persons
 module.exports.index = function(req, res) {

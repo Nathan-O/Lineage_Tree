@@ -5,11 +5,12 @@ console.log("Sanity - app.js (angular)");
 app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
    $routeProvider
       .when("/", {
-         templateUrl: "/partials/line-tree-index.html"
+         templateUrl: "/partials/line-tree-index.html",
+         controller: "lineageIndexCtrl"
       })
       .when("/lineage-create", {
          templateUrl: "/partials/create-tree.html",
-         // controller: "lineageCtrl"
+         controller: "lineageCtrl"
       })
       .otherwise({redirectTo: '/'});
 

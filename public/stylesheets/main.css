@@ -16,6 +16,10 @@
    color: green;
 }
 
+#tree-index-sanity {
+   color: orange;
+}
+
 
 #create-tree-wrap {
    border: 5px green solid;

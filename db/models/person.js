@@ -13,7 +13,7 @@ var PersonSchema = new Schema({
    dateCreated: {type: Date, default: Date.now()}
 });
 
-PersonSchema.plugin(passportLocalMongoose);
+// PersonSchema.plugin(passportLocalMongoose);
 
 var Person = mongoose.model("Person", PersonSchema);
 
