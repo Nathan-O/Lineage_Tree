@@ -28,6 +28,7 @@
       <script type="text/javascript" src="/javascripts/services.js"></script>
       <script type="text/javascript" src="/javascripts/controllers.js"></script>
    </head>
+
    <body ng-controller="mainCtrl as main">
       <div ng-include="'/partials/nav.html'"></div>
       <div class="container">
@@ -44,22 +45,23 @@
          </header>
 
          <div class="row">
-            <div class="col-md-8 col-md-offset-2" id="css-sanity">
-               <h2 id="sanity">CSS Sanity</h2>
-            </div>
-         </div>
-
-      
-         <hr>
-
-
-         <div class="row">
             <div class="col-md-10 col-md-offset-1" id="view-wrap">
                <div ng-view></div>
             </div>
          </div>
 
          <hr>
+
+         <div class="row">
+            <div class="col-md-8 col-md-offset-2" id="css-sanity">
+               <h2 id="sanity">CSS Sanity</h2>
+            </div>
+         </div>
+
+
+         <hr>
+
+
          <div class="row">
             <div class="col-md-10 col-md-offset-1">
                <p>Above this is where all the shit will go!!</p>

@@ -129,6 +129,27 @@ app.controller("lineageCtrl", function($scope, Tree, Tree_Show, $location, $rout
 });
 
 
+/*
+NOTE: FOR TOMORROW:
+
+ - Look up data visualization. How can I render
+   the family and family members in a tree form?
+
+ - What do I need to do to add a person to a family?
+   In the family show page? Have an ADD A MEMBER BUTTON?
+   That would mean the best way to flow the sight would
+   be to redirect after User clicks "Create Family" I
+   also need to figure out how to presist the family
+   last name to the person (unless the User changes the
+   name manually).
+
+ - How do I show family relationships? So far I have
+   an idea of drop boxes under marked fields (i.e. a
+   drop down box labeled "Siblings" and has a list of
+   family members. Choose all that apply then when the
+   list gets sent to the back end iterate through and
+   push them to the Sibling association KEY).
+*/
 
 
 
@@ -136,8 +157,7 @@ app.controller("lineageCtrl", function($scope, Tree, Tree_Show, $location, $rout
 
 
 
-
-app.controller("personCtrl", function($scope, Person) {
+app.controller("personCtrl", function($scope, Person, $routeParams) {
    $scope.person = {};
    $scope.newPerson = {};
    // $scope.showFamilyNameForm = true;
