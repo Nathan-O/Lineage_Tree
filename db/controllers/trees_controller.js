@@ -5,24 +5,41 @@ var Tree = require("./../models").Tree;
 
 // Index all family trees
 module.exports.index = function (req, res) {
+
+   console.log("---------- LOG ----------");
+   console.log("TREE DB CTRL - INDEX");
+   console.log("-------- END LOG --------");
+
    Tree.find({}, function (err, trees) {
       res.json(trees);
    });
 };
 
-// // set the value of the id
-// var targetId = req.params.id;
-//
-// // find question in db by id
-// Question.findOne({_id: targetId}, function (err, foundQuestion) {
-//   res.json(foundQuestion);
-// });
-
 module.exports.show = function(req, res) {
-   console.log(req.body);
+
+   console.log("---------- LOG ----------");
+   console.log("TREE DB CTRL - SHOW");
+   console.log("-------- END LOG --------");
+
+   var targetId = req.params.id;
+
+   Tree.findOne({_id: targetId}, function (err, tree) {
+      if (err) {
+         console.log(" --  Error!!  -- ");
+         console.log(err);
+         res.status(422).send(err);
+      }
+      console.log(tree);
+      res.json(tree);
+   });
 };
 
 module.exports.create = function(req, res) {
+
+   console.log("---------- LOG ----------");
+   console.log("TREE DB CTRL - CREATE");
+   console.log("-------- END LOG --------");
+
    var treeData = req.body;
    console.log(treeData);
    var newTree = new Tree({familyName: treeData.familyName});
@@ -41,6 +58,10 @@ module.exports.create = function(req, res) {
 
 // module.exports.update = function(req, res) {
 //    //
+//    console.log("---------- LOG ----------");
+//    console.log("TREE DB CTRL - INDEX");
+//    console.log("-------- END LOG --------");
+//
 // };
 
 module.exports.destroy = function(req, res) {

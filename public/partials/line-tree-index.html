@@ -10,8 +10,16 @@
       <div id="tree-list-wrap">
          <ul class="list-group" ng-repeat="line in trees">
             <li class="list-group-item">
-               {{line.familyName}}
-               <a href="/lineage-show">SHOW</a>
+               <h3>{{line.familyName}}</h3>
+               
+               <a ng-href="/lineage/{{line._id}}">Show</a>
+                <!-- ng-click="lineProfile(line)" -->
+
+               <!-- <a ng-href="#" ng-click="lineProfile(line)">SHOW</a> -->
+
+               <p>And id: {{line._id}}</p>
+
+
                <a href="#" class="pull-right" ng-click="deleteLineage(line)">
                   <i class="icon ion-close-circled"></i>
                </a>

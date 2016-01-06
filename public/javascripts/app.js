@@ -12,9 +12,12 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
          templateUrl: "/partials/create-tree.html",
          controller: "lineageCtrl"
       })
-      .when("/lineage-show", {
-         templateUrl: "/partials/lineage-show.html",
-         controller: ""
+      .when("/lineage/:id", {
+         templateUrl: "/partials/lineage-profile.html",
+         // controller: "lineageCtrl"
+         // controller: "lineageIndexCtrl"
+         controller: "lineageShowCtrl"
+
       })
       .otherwise({redirectTo: '/'});
 

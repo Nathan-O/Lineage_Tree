@@ -4,7 +4,31 @@ app.controller("mainCtrl", function($scope, $window) {
    $scope.user = $window.user;
 });
 
-app.controller("lineageIndexCtrl", function($scope, Tree, $location) {
+
+
+
+app.controller("lineageShowCtrl", function($scope, Tree, Tree_Show, $location, $routeParams) {
+   console.log("SHOW CTRL");
+
+   var target = $routeParams.id;
+
+   Tree_Show.get({id: target}, function(data) {
+      console.log("FULL CIRCLE");
+      console.log(data);
+
+      $scope.lineage = data;
+   });
+});
+
+
+
+
+
+
+
+
+app.controller("lineageIndexCtrl", function($scope, Tree, Tree_Show, $location, $routeParams) {
+
    Tree.query(
       function(data) {
          $scope.trees = data;
@@ -13,6 +37,39 @@ app.controller("lineageIndexCtrl", function($scope, Tree, $location) {
          $location.path("/");
       }
    );
+
+   // Tree.get({id: },
+   // Tree.get(
+   //    function(data) {
+   //       console.log($scope);
+   //       data.forEach(function(tree){
+   //          console.log(line);
+   //          // if (line.id === ) {
+   //          //    return line;
+   //          // }
+   //       });
+   //    }
+   // );
+   $scope.lineage = {};
+
+   // $scope.lineProfile = function(line) {
+   //    console.log("SHOW CTRL");
+   //    console.log("_____ LINE _____");
+   //    console.log(line);
+   //
+   //    console.log("_____ PARAM _____");
+   //    console.log($routeParams);
+   //
+   //    Tree_Show.get({id: line._id}, function(data) {
+   //       console.log("FULL CIRCLE");
+   //       console.log(data);
+   //
+   //       $scope.lineage = data;
+   //       // $window.location.href = "/lineage/:id";
+   //       $location.path("/lineage/" + {id: line._id});
+   //
+   //    });
+   // };
 
    $scope.deleteLineage = function(tree) {
       Tree.delete({id: tree._id});
@@ -23,8 +80,15 @@ app.controller("lineageIndexCtrl", function($scope, Tree, $location) {
 
 
 
-app.controller("lineageCtrl", function($scope, Tree) {
+
+
+
+
+
+
+app.controller("lineageCtrl", function($scope, Tree, Tree_Show, $location, $routeParams) {
    $scope.tree = {};
+   $scope.line = {};
    $scope.newTree = {};
    $scope.showFamilyNameForm = true;
    $scope.showPersonForm = false;
@@ -50,12 +114,28 @@ app.controller("lineageCtrl", function($scope, Tree) {
       $scope.tree = {};
    };
 
-   $scope.show = function($scope, Tree, $location) {
-      Tree.get($scope.tree, function(data) {
-         console.log("FULL CIRCLE");
-      });
-   };
+   // $scope, Tree, $location, $routeParams
+
+   // $scope.lineProfile = function() {
+   //    console.log("SHOW CTRL");
+   //    Tree_Show.get({id: $routeParams.id}, function(data) {
+   //       console.log("FULL CIRCLE");
+   //       console.log(data);
+   //
+   //       $scope.line = data;
+   //
+   //    });
+   // };
 });
+
+
+
+
+
+
+
+
+
 
 app.controller("personCtrl", function($scope, Person) {
    $scope.person = {};
