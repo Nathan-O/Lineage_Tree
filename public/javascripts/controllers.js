@@ -8,7 +8,6 @@ app.controller("mainCtrl", function($scope, $window) {
 
 
 app.controller("lineageShowCtrl", function($scope, Tree, Tree_Show, $location, $routeParams) {
-   console.log("SHOW CTRL");
 
    var target = $routeParams.id;
 
